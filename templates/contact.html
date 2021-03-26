@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}contact{% endblock title %}
+{% block body %}
+<div class="Container">
+  <img src="https://source.unsplash.com/user/erondu/1300x300">
+  <h1>Contact us</h1>
+
+  <form class="row g-3" method="post" action="/contact">
+     {% csrf_token %}
+  <div class="col-md-6">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" name="name">
+  </div>
+  <div class="col-md-6">
+    <label for="mobile no." class="form-label">Mobile no.</label>
+    <input type="phone" class="form-control" id="mobile no." name="mobile">
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Address</label>
+    <input type="text" class="form-control" id="inputAddress" name="address">
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+</div>
+{% endblock body %}
